@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Invitation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fef9f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #ff6f61;
+        }
+        .question {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        .buttons {
+            margin: 20px;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button.yes {
+            background-color: #58d68d;
+            color: white;
+        }
+        button.no {
+            background-color: #e74c3c;
+            color: white;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        img {
+            max-width: 300px;
+            margin: 20px 0;
+        }
+    </style>
+    <script>
+        function handleResponse(response) {
+            const mainContent = document.getElementById('main-content');
+            if (response === 'yes') {
+                mainContent.innerHTML = `
+                    <h1>Yay! 😊</h1>
+                    <p>You made my day! Can't wait for Thursday! 💕</p>
+                    <img src="https://cdn3d.iconscout.com/3d/premium/thumb/emoji-party-7266652-5914522.png">
+                `;
+            } else {
+                mainContent.innerHTML = `
+                    <h1>Oh no... 😢</h1>
+                    <p>That's okay, maybe another time! 💔</p>
+                    <img src="https://files.123freevectors.com/wp-content/original/33787-loudly-crying-face-emoji-vector.jpg">
+                `;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="main-content">
+        <h1>Hi there! ❤️</h1>
+        <p class="question">Would you like to go on a date with me this Thursday? 🥰</p>
+        <div class="buttons">
+            <button class="yes" onclick="handleResponse('yes')">Yes! 💖</button>
+            <button class="no" onclick="handleResponse('no')">No... 💔</button>
+        </div>
+        <img src="https://i.pinimg.com/originals/d4/37/f0/d437f0ec5c39a6c38117a84ed5b7e36b.png" alt="Cute Question Image">
+    </div>
+</body>
+</html>
+ 
+
